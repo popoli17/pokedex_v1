@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxanium', cursive;
+}
+
+body {
+    text-align: center; /*alinha o conteudo */
+    background: linear-gradient(to bottom, #6ab7f5, #fff); /*faz um degrade com as cores definidas */
+    min-height: 100vh; /*faz com que a a view fique em 100*/
+}
+
+main {
+
+    display: inline-block; 
+    margin-top: 2%;
+    padding: 15px; /*deixa um espaço nas bordas para caso a tela seja pequena ou seja diminuida*/
+    position: relative;
+}
+
+.pokedex{
+    width: 100%;
+    max-width: 425px;
+}
+
+.pokemon_image{
+    /*Ao diminuir a tela, a imagem do pokemon começa a se deslocar
+    sendo assim, não podemos usar valores absolutos, teremos que usar valores em porcentagem*/
+    position: absolute;
+    bottom: 56.5%; /*Essa % é refrente a nossa div main (imagem da pokedex)*/
+    left: 50%px;
+    transform: translate(104%, 20%);/* O translate muda a posição da imagem - recebe 2 parametros X e Y - esses valores são referentes ao tamanho da imagem*/
+    height: 18%;
+}
+
+.pokemon_data{
+    position: absolute;
+    font-weight: 600;
+    color: #aaa;
+    top: 54.5%;
+    right: 27%;
+    font-size: clamp(8px, 5vw, 25px) /*a função clamp recebe 3 parametros minimo, default, maximo*/
+}
+
+.pokemon_name{
+    color: #3a444d;
+    text-transform: capitalize; /*deixa somente a primeira letra maiuscula*/
+}
+
+.form{
+    position: absolute;
+    background-color: red;
+    width:  65%;
+    top: 65%;
+    left: 13.5%;
+}
+
+.input_search{
+    width: 100%;
+    padding: 4%;
+    outline: none;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #3a444d;
+    font-size: clamp(8px, 5vw, 1rem);
+    box-shadow: -3px 4px 0 #888;
+
+
+}
+
+.buttons{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    width: 65%;
+    transform: translate(-57%, 0);
+    display: flex;
+    gap: 20px;
+}
+
+.button{
+    width: 50%;
+    padding: 4%;
+    border: 2px solid #000;
+    border-radius: 5px;
+    font-size: clamp(8px, 5vw, 1rem);
+    font-weight: 600;
+    color: yellow;
+    background-color: #444;
+    box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;  
+}
+
+button:active{
+    box-shadow: inset -4px 4px #222;
+    font-size: 0.9rem;
+}
